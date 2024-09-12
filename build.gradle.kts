@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.josephsimutis"
-version = "DEV"
+version = "0.1.0-pre.1"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
@@ -27,6 +27,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
+    implementation("io.ktor:ktor-server-websockets:2.3.12")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
