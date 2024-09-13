@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browser Chat</title>
+    </head>
+    <body>
+        <h1>Browser Chat</h1>
+        <form id="messageForm" action="">
+            <input type="text" id="messageContent">
+            <button type="submit">Send</button>
+        </form>
+        <div id="messages"></div>
+        <script>
+            const socket = new WebSocket("ws://" + location.hostname + ":5001")
+            socket.onmessage = recieveMessage
+
+            function recieveMessage(event) {
+                document.getElementById("messages").textContent += event.data
+            }
+        </script>
+    </body>
+</html>
